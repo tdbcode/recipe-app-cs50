@@ -22,32 +22,29 @@ function App() {
   const [CALORIES_URL, setCaloriesURL] = useState("");
   const RECIPE_URL = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchcriteria}&app_id=${API.APP_ID}&app_key=${API.APP_KEY}${HEALTH_URL}${DIET_URL}${MEALTYPE_URL}${CALORIES_URL}`;
 
-
-  // https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=0b90b246&app_key=f08b044bcfbbe977ae670414e62303c8&diet=low-fat&health=celery-free&mealType=Dinner
+  // Link Example from API: https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=0b90b246&app_key=f08b044bcfbbe977ae670414e62303c8&diet=low-fat&health=celery-free&mealType=Dinner
 
   const formSubmit = (e) => {
     e.preventDefault();
     getRecipes();
-    console.log(RECIPE_URL); 
+    // console.log(RECIPE_URL); // for testing only
   };
 
   const filterByCalories = (items) => {
-    const newRecipeList = items.filter(() => {
-      const calories = items.recipe.calories;
-      if (calories>=mincalories && calories <=maxcalories){
-        return true;
-      }
+    const newRecipeList = items.filter(item => {
+      const calories = item.recipe.calories;
+      return calories >= mincalories && calories <=maxcalories;
     })
-    console.log(newRecipeList);
+    // console.log(newRecipeList); // for testing only
+    setRecipes(newRecipeList);
   };
  
   const getRecipes = async () => {
     try{
       const response = await axios.get(RECIPE_URL)
       console.log("GET Response");
-      console.log(response.data.hits);
+      // console.log(response.data.hits); // for testing only
       filterByCalories(response.data.hits);
-      setRecipes(response.data.hits);
     }
     catch (error) {
       console.log("Error in fetching recipes.", error)
@@ -63,18 +60,18 @@ function App() {
     console.log(newHealthCriteria); 
     if(newHealthCriteria===""){
       setHealthURL("");
-      console.log(RECIPE_URL); 
+      // console.log(RECIPE_URL);  // for testing only
     }
     else{
       setHealthURL(`&health=${newHealthCriteria}`);
-      console.log(RECIPE_URL); 
+      // console.log(RECIPE_URL);  // for testing only
     }
   };
 
   const handleDietChange = (d) => {
     const newDietCriteria = d.target.value;
     setDietCriteria(newDietCriteria);
-    console.log(newDietCriteria); 
+    // console.log(newDietCriteria); // for testing only
     if(newDietCriteria===""){
       setDietURL("");
     }
@@ -86,7 +83,7 @@ function App() {
   const handleMealType = (m) => {
     const newMealTypeCriteria = m.target.value;
     setMealTypeCriteria(newMealTypeCriteria);
-    console.log(newMealTypeCriteria); 
+    // console.log(newMealTypeCriteria); // for testing only
     if(newMealTypeCriteria===""){
       setMealTypeURL("");
     }
@@ -124,8 +121,6 @@ function App() {
       setCaloriesURL(`&calories=${encodeURIComponent(mincalories)}-${encodeURIComponent(maxcals)}`);
     }
   };
-
-
 
   return (
     <div className="App">
