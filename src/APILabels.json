@@ -1,0 +1,192 @@
+{
+    "HealthLabels": [
+      {
+        "Name": "Alcohol Cocktail",
+        "APIID": "alcohol-cocktail"
+      },
+      {
+        "Name": "Alcohol Free",
+        "APIID": "alcohol-free"
+      },
+      {
+        "Name": "Celery Free",
+        "APIID": "celery-free"
+      },
+      {
+        "Name": "Crustcean Free",
+        "APIID": "crustacean-free"
+      },
+      {
+        "Name": "Dairy Free",
+        "APIID": "dairy-free"
+      },
+      {
+        "Name": "Egg Free",
+        "APIID": "egg-free"
+      },
+      {
+        "Name": "Fish Free",
+        "APIID": "fish-free"
+      },
+      {
+        "Name": "FODMAP Free",
+        "APIID": "fodmap-free"
+      },
+      {
+        "Name": "Gluten Free",
+        "APIID": "gluten-free"
+      },
+      {
+        "Name": "Immuno Supportive",
+        "APIID": "immuno-supportive"
+      },
+      {
+        "Name": "Keto Friendly",
+        "APIID": "keto-friendly"
+      },
+      {
+        "Name": "Kidney Friendly",
+        "APIID": "kidney-friendly"
+      },
+      {
+        "Name": "Kosher",
+        "APIID": "kosher"
+      },
+      {
+        "Name": "Low Potassium",
+        "APIID": "low-potassium"
+      },
+      {
+        "Name": "Low Sugar",
+        "APIID": "low-sugar"
+      },
+      {
+        "Name": "Lupine Free",
+        "APIID": "lupine-free"
+      },
+      {
+        "Name": "Mediterranean",
+        "APIID": "Mediterranean"
+      },
+      {
+        "Name": "Mollusk Free",
+        "APIID": "mollusk-free"
+      },
+      {
+        "Name": "Mustard Free",
+        "APIID": "mustard-free"
+      },
+      {
+        "Name": "No oil added",
+        "APIID": "No-oil-added"
+      },
+      {
+        "Name": "Paleo",
+        "APIID": "paleo"
+      },
+      {
+        "Name": "Peanut Free",
+        "APIID": "peanut-free"
+      },
+      {
+        "Name": "Pescatarian",
+        "APIID": "pecatarian"
+      },
+      {
+        "Name": "Pork Free",
+        "APIID": "pork-free"
+      },
+      {
+        "Name": "Red Meat Free",
+        "APIID": "red-meat-free"
+      },
+      {
+        "Name": "Sesame Free",
+        "APIID": "sesame-free"
+      },
+      {
+        "Name": "Shellfish Free",
+        "APIID": "shellfish-free"
+      },
+      {
+        "Name": "Soy Free",
+        "APIID": "soy-free"
+      },
+      {
+        "Name": "Sugar Conscious",
+        "APIID": "sugar-conscious"
+      },
+      {
+        "Name": "Sulfite Free",
+        "APIID": "sulfite-free"
+      },
+      {
+        "Name": "Tree Nut Free",
+        "APIID": "tree-nut-free"
+      },
+      {
+        "Name": "Vegan",
+        "APIID": "vegan"
+      },
+      {
+        "Name": "Vegetarian",
+        "APIID": "vegetarian"
+      },
+      {
+        "Name": "Wheat Free",
+        "APIID": "wheat-free"
+      }
+    ],
+    "MealTypes": [
+        {
+          "Type": "Breakfast",
+          "APIID": "breakfast"
+        },
+        {
+          "Type": "Brunch",
+          "APIID": "brunch"
+        },
+        {
+          "Type": "Lunch",
+          "APIID": "lunch"
+        },
+        {
+          "Type": "Dinner",
+          "APIID": "dinner"
+        },
+        {
+          "Type": "Snack",
+          "APIID": "snack"
+        },
+        {
+          "Type": "teatime",
+          "APIID": "teatime"
+        }
+      ],
+      "DietLabels": [
+        {
+          "Name": "Balanced",
+          "APIID": "balanced"
+        },
+        {
+          "Name": "High Fiber",
+          "APIID": "high-fiber"
+        },
+        {
+          "Name": "High Protein",
+          "APIID": "high-protein"
+        },
+        {
+          "Name": "Low Carb",
+          "APIID": "low-carb"
+        },
+        {
+          "Name": "Low Fat",
+          "APIID": "low-fat"
+        },
+        {
+          "Name": "Low Sodium",
+          "APIID": "low-sodium"
+        }
+      ]
+  }
