@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
@@ -7,33 +10,114 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .App-form {
+    flex-direction: column;
+  }
+  .App-form input,
+  .App-form select {
+    width: 100%;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+  background-color: #6ACC00;
+  min-height: 4vh;
   margin: 0px;
-  display:block;
-  flex-direction: column;
-  align-items: center;
+  display: block;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  color: #24292e;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,2);
+}
+
+.App-header h1 {
+  margin: 0;
+}
+
+.App-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem;
+  background-color: #fff;
+  padding: 1rem;  
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,2);
+}
+
+.App-form h3{
+  margin: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.App-form label {
+  margin-bottom: 5px;
+  margin-left: 2rem;
+}
+
+.App-form input,
+.App-form select {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.App-form input:hover,
+.App-form select:hover {
+  border: 1px solid #777;
+}
+
+.App-form-search-bar {
+  width: 50rem;
+}
+
+.App-form-calories-bar {
+  width: 2rem;
+}
+
+.App-form-submit {
+  padding: 0.5rem 1rem;
+  font-size: 15px;
+  background-color:#6ACC00;
+  border: 1rem solid #6ACC00;
+  border-radius: 4px;
+  color: #24292e;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 0 auto;
+}
+
+.App-form-submit:hover{
+  background-color: #77e402;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #6ACC00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-link:hover {
+  color: #77e402;
+}
+
+.RecipeContainer {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.RecipeLink {
+  color: #333; 
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.RecipeLink:hover {
+  color: #6ACC00; 
 }

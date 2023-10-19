@@ -27,15 +27,20 @@ function App() {
   const formSubmit = (e) => {
     e.preventDefault();
     getRecipes();
-    // console.log(RECIPE_URL); // for testing only
+    //console.log(RECIPE_URL); // for testing only
   };
 
   const filterByCalories = (items) => {
     const newRecipeList = items.filter(item => {
       const calories = item.recipe.calories;
-      return calories >= mincalories && calories <=maxcalories;
+      if (!mincalories && !maxcalories) {
+        return true;
+      }
+      else{
+        return calories >= mincalories && calories <=maxcalories;
+      }
     })
-    // console.log(newRecipeList); // for testing only
+    console.log(newRecipeList); // for testing only
     setRecipes(newRecipeList);
   };
  
@@ -127,20 +132,30 @@ function App() {
       <h1 className="App-header">TDB Recipes</h1>
       
       <form className="App-form" onSubmit={formSubmit}>
+      <div className="App-form-container">
+        <h3>Search for recipes by entering ingredients, e.g. chicken, health labels, meal type, dietary options, or calorie range.</h3>
+      <label htmlFor="searchcriteria">Search Criteria: </label>
         <input 
           type="text"
           className="App-form-search-bar" 
           value={searchcriteria} 
+          placeholder="Search for a recipe by name"
           onChange={(s) => setSearchCriteria(s.target.value)}
         />
         
-        <select className="App-food-options" value={healthcriteria} onChange={handleHealthChange}>
+        <input className="App-form-submit" type="Submit" value="Search" />
+
+      <div className="App-form-options">
+        <label htmlFor="healthcriteria">Health Labels: </label>
+        <select value={healthcriteria} onChange={handleHealthChange}>
         <option value="">Select a health option</option>
           {HealthLabels.HealthLabels.map((healthLabel) => (
             <option key={healthLabel.APIID} value={healthLabel.APIID}>{healthLabel.Name}</option>
         ))}
         </select>
-
+            </div>
+            <div className="App-form-options">
+        <label htmlFor="mealtypecriteria">Meal Type: </label>
         <select value={mealtypecriteria} onChange={handleMealType}>
         <option value="">Select a meal type</option>
         {MealTypes.MealTypes.map((mealType) => (
@@ -149,16 +164,20 @@ function App() {
           </option>
         ))}
       </select>
-
+          </div>
+          <div className="App-form-options">
+      <label htmlFor="dietcriteria">Dietary Options: </label>
       <select value={dietcriteria} onChange={handleDietChange}>
-        <option value="">Select a diet label</option>
+        <option value="">Select a diet option</option>
         {DietLabels.DietLabels.map((dietLabel) => (
           <option key={dietLabel.APIID} value={dietLabel.APIID}>
             {dietLabel.Name}
           </option>
         ))}
       </select>
-
+      </div>
+      <div className="App-form-options">
+      <label htmlFor="mincalories">Min Calories:</label>         
       <input 
           type="text"
           className="App-form-calories-bar" 
@@ -166,24 +185,29 @@ function App() {
           onChange={handleMinCalories}
         />
 
+     <label htmlFor="maxcalories">Max Calories:</label>   
       <input 
           type="text"
           className="App-form-calories-bar" 
           value={maxcalories} 
           onChange={handleMaxCalories}
         />
-
-      <input className="App-form-submit" type="Submit"/>
+        </div>
+      </div>
       </form>
-      {recipes.map(recipe =>(
-        <Recipe 
-        key={recipe.recipe.label}
-        title={recipe.recipe.label}
-        calories={recipe.recipe.calories}
-        image={recipe.recipe.image}
-        ingredients={recipe.recipe.ingredients}
-        />
-      ))};
+      <div className="RecipeContainer"><h3>Click on recipes to be taken to their respective pages</h3></div>
+      <div className="RecipeContainer">
+        {recipes.map(recipe =>(
+          <a href={recipe.recipe.url} className="RecipeLink">
+          <Recipe 
+          key={recipe.recipe.label}
+          title={recipe.recipe.label}
+          calories={recipe.recipe.calories}
+          image={recipe.recipe.image}
+          ingredients={recipe.recipe.ingredients}
+          /></a>
+        ))}
+      </div>
     </div>
   );
 }
@@ -226,6 +250,11 @@ Removing items from list:
 https://stackoverflow.com/questions/49103681/best-way-to-delete-an-item-from-dictionary-react-js#:~:text=As%20for%20deleting%20an%20object,more%20what%20the%20problem%20is.
 https://www.robinwieruch.de/react-remove-item-from-list/
 https://dev.to/collegewap/how-to-delete-an-item-from-the-state-array-in-react-kl
+CSS:
+https://blog.hubspot.com/website/css-id
+Ton of helpful items here:
+https://www.w3schools.com/css/css_list.asp
+https://stackoverflow.com/questions/47409585/using-rem-units-in-media-queries-and-as-width
 */
 
 
