@@ -14,15 +14,18 @@ function App() {
   const [mealtypecriteria, setMealTypeCriteria] = useState(''); 
   const [dietcriteria, setDietCriteria] = useState('');
   const [recipes, setRecipes] = useState([]);
-  const RECIPE_URL = `https://api.edamam.com/api/recipes/v2?type=public
-  &q=${searchcriteria}
-  &app_id=${API.APP_ID}
-  &app_key=${API.APP_KEY}
-  &health=${healthcriteria}`;
+  const [HEALTH_URL, setHealthURL] = useState("");
+  const [DIET_URL, setDietURL] = useState("");
+  const [MEALTYPE_URL, setMealTypeURL] = useState("");
+  const RECIPE_URL = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchcriteria}&app_id=${API.APP_ID}&app_key=${API.APP_KEY}${HEALTH_URL}${DIET_URL}${MEALTYPE_URL}`;
+
+
+  // https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=0b90b246&app_key=f08b044bcfbbe977ae670414e62303c8&diet=low-fat&health=celery-free&mealType=Dinner
 
   const formSubmit = (e) => {
     e.preventDefault();
-    getRecipes();   
+    getRecipes();
+    console.log(RECIPE_URL); 
   }
  
   const getRecipes = async () => {
@@ -41,15 +44,42 @@ function App() {
   };
 
   const handleHealthChange = (h) => {
-    setHealthCriteria(h.target.value);
+    const newHealthCriteria = h.target.value;
+    setHealthCriteria(newHealthCriteria);
+    console.log(newHealthCriteria); 
+    if(newHealthCriteria===""){
+      setHealthURL("");
+      console.log(RECIPE_URL); 
+    }
+    else{
+      setHealthURL(`&health=${newHealthCriteria}`);
+      console.log(RECIPE_URL); 
+    }
   };
 
   const handleDietChange = (d) => {
-    setDietCriteria(d.target.value);
+    const newDietCriteria = d.target.value;
+    setDietCriteria(newDietCriteria);
+    console.log(newDietCriteria); 
+    if(newDietCriteria===""){
+      setDietURL("");
+    }
+    else{
+      setDietURL(`&diet=${newDietCriteria}`);
+    }
   };
 
   const handleMealType = (m) => {
-    setMealTypeCriteria(m.target.value);
+    const newMealTypeCriteria = m.target.value;
+    setMealTypeCriteria(newMealTypeCriteria);
+    console.log(newMealTypeCriteria); 
+    if(newMealTypeCriteria===""){
+      setMealTypeURL("");
+    }
+    else{
+      setMealTypeURL(`&mealType=${newMealTypeCriteria}`);
+    }
+    
   };
 
   return (
