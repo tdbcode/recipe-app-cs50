@@ -1,12 +1,17 @@
 import React from 'react';
-import './recipeout.css';
+import './recipeout.css'; // Import CSS for recipe tile layout
 
-const Recipe = ({title,calories,image,ingredients}) => {
+// Create new recipe tile with title, calories, image and ingredients passed from App.js
+const Recipe = ({title, calories, image, ingredients}) => {
 
+    // function to round calories from decimals to whole numbers for displaying
     const roundCalories = (calories) => {
         return Math.round(calories);
     };
 
+    // displays the HTML code for each tile when run
+    // Sets up layout with appropriate CSS classNames
+    // uses the dictionary.map function to output the entire array of ingredients in a list
     return (
         <div className="Recipe">
             <div className="Recipe-title">

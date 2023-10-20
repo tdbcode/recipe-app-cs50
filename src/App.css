@@ -1,3 +1,4 @@
+/* Set the main body of the program to include padding from the top and center justify all content in a column layout */
 .App {
   padding: 30px 20px;
   display: flex;
@@ -5,11 +6,7 @@
   justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
+/* Dictates how page renders - ensures that the form is always set to appropriate width for it's div contain on reload */
 @media (max-width: 768px) {
   .App-form {
     flex-direction: column;
@@ -20,6 +17,8 @@
   }
 }
 
+/* The header follows a color borrowed from Edamam's logo as it's main backgrouind color a light green */
+/* sets the minimum height for the header, removes a margin, displays the header as a block, sets font color and assigns a style with a box ahdow and curved corners */
 .App-header {
   background-color: #6ACC00;
   min-height: 4vh;
@@ -34,10 +33,13 @@
   box-shadow: 0 0 10px rgba(0,0,0,2);
 }
 
+/* Gives H1 tag in header a 0 margin */
 .App-header h1 {
   margin: 0;
 }
 
+/* Sets the format for the form section of the app */
+/* Centers content, gives a margin size of the font size, white background, padding of the font size, a border with a box shadow the same as the header */
 .App-form{
   display: flex;
   flex-wrap: wrap;
@@ -49,39 +51,47 @@
   box-shadow: 0 0 10px rgba(0,0,0,2);
 }
 
+/* Sets h3 tags - for instructions- to have a small margin at the top and a large at the bottom as to space the rest of the form out */
 .App-form h3{
   margin: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
+/* Applies a bottom margin and left margin to labels on the form */
 .App-form label {
   margin-bottom: 5px;
   margin-left: 2rem;
 }
 
+/* Sets fonts for inputs and selects/options on the form */
+/* Provides a margin and border for all items, gives slightly curved corners */
 .App-form input,
 .App-form select {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   margin: 0.5rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
+  border-radius: 5px;
 }
 
+/* When hovering over an input or dropdown box changes border color to grey */
 .App-form input:hover,
 .App-form select:hover {
   border: 1px solid #777;
 }
 
+/* Sets the search criteria bar to be wider than all other items */
 .App-form-search-bar {
   width: 50rem;
 }
 
+/* Makes calories boxes small */
 .App-form-calories-bar {
   width: 2rem;
 }
 
+/* Settings for form button following edamams green color, similar to the header */
+/* Applies a quick transiton to hover effect */
 .App-form-submit {
   padding: 0.5rem 1rem;
   font-size: 15px;
@@ -94,30 +104,36 @@
   margin: 0 auto;
 }
 
+/* Slightly ligther shade of green when button is rolled over */
 .App-form-submit:hover{
   background-color: #77e402;
 }
 
+/* Any links go this shade of green */
 .App-link {
   color: #6ACC00;
 }
 
+/* Hover effect for link - same color as hover effect for button */
 .App-link:hover {
   color: #77e402;
 }
 
+/* Ensuring recipes are centered and together */
 .RecipeContainer {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
 
+/* Sets link text for recipe to grey so it doesn't look like a link - removes decoration*/
 .RecipeLink {
   color: #333; 
   text-decoration: none;
   margin-bottom: 1rem;
 }
 
+/* When hovering over recipe title all text goes this green */
 .RecipeLink:hover {
   color: #6ACC00; 
 }

@@ -1,3 +1,4 @@
+/* CSS settings for each recipe tile - ensuring a fixed width, box shadow around each tile, white bgcolor, border and curved corners */
 .Recipe {
     margin: 0.5rem;
     padding: 0;
@@ -11,6 +12,7 @@
     min-height: 100%;
   }
 
+  /* Sets recipe title to go to very top of box and to fix curved corners on each side - sets background color to same as header, text white */
  .Recipe-title {
     padding: 0.5rem;
     border-top-left-radius: 8px;
@@ -20,16 +22,19 @@
     color: white;
   }
 
+/* Makes sure heading two (recipe title) is slightly larger than regular text */
 .Recipe-title h2 {
     font-size: 1.5rem;
     margin: 0;
 }
 
+/* Makes sure calories is smaller than recipe title */
 .Recipe-title p {
     font-size: 1rem;
     margin: 0;
 }
 
+/* Ensures image of recipe is fixed size and fits perfectly into tile */
 .Recipe-image {
     top:0;
     left:0;
@@ -39,10 +44,12 @@
     height:300px;
 }
 
+/* Gives some padding to ingredients */
 .Recipe-ingredients {
     padding: 1rem;
   }
   
+/* Removes bulletpoints and margins from list  */
 .Recipe-ingredients ul {
     padding: 0;
     margin: 0;
@@ -50,6 +57,7 @@
 
   }
   
+/* Sets bottom margin from list */
 .Recipe-ingredients ul li {
     margin-bottom: 0.5rem;
 }
