@@ -263,6 +263,7 @@ https://www.upgrad.com/blog/axios-in-react/
 https://forums.meteor.com/t/solved-how-to-return-the-result-of-an-axios-call-to-the-client/55392/3
 https://stackoverflow.com/questions/63880605/react-js-how-to-prevent-page-reload-once-click-on-the-link-right-now-the-whole#:~:text=You%20could%20prevent%20the%20page,method%20in%20the%20event%20practice.&text=Easy%20way%20to%20redirect%20another%20page%20without%20refreshing%20the%20page%20...
 https://www.robinwieruch.de/react-preventdefault/
+https://www.pluralsight.com/guides/how-to-use-the-map()-function-to-export-javascript-in-react
 https://developer.edamam.com/edamam-docs-recipe-api#/
 https://stackoverflow.com/questions/29108779/how-to-get-selected-value-of-a-dropdown-menu-in-reactjs
 https://www.guvi.in/blog/how-to-fetch-data-using-api-in-react/
@@ -271,6 +272,7 @@ https://www.w3schools.com/react/react_useeffect.asp
 https://forums.meteor.com/t/solved-how-to-return-the-result-of-an-axios-call-to-the-client/55392
 https://www.smashingmagazine.com/2020/11/comparison-async-await-versus-then-catch/
 https://stackoverflow.com/questions/64590346/how-to-assign-axios-response-to-a-constant-and-return-the-const-with-assigned-va
+https://betterprogramming.pub/4-ways-of-adding-external-js-files-in-reactjs-823f85de3668
 
 Maps and displaying items from a dictionary:
 https://stackblitz.com/edit/react-dictionary-map?file=index.js
